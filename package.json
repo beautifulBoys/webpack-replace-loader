@@ -4,9 +4,10 @@
   "author": "beautifulBoys <1298947916.com>",
   "description": "A loader for replace string in webpack",
   "keywords": [
-    "webpack-loader",
     "webpack",
     "loader",
+    "webpack-loader",
+    "replace",
     "replace-string"
   ],
   "scripts": {},

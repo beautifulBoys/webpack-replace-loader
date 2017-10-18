@@ -2,7 +2,7 @@
 var loaderUtils = require('loader-utils');
 
 // Characters needed to escape
-var escapeArray = ['/', '[', ']', '.', '(', ')', '$', '^', '*', '+', '?', '|', '{', '}'];
+var escapeArray = ['/', '[', ']', '-', '.', '(', ')', '$', '^', '*', '+', '?', '|', '{', '}'];
 
 function warning (num) {
   var arr = [
