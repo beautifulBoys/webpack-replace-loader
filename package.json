@@ -2,7 +2,7 @@
   "name": "webpack-replace-loader",
   "version": "1.0.0",
   "author": "beautifulBoys <1298947916.com>",
-  "description": "A loader for replace string in webpack",
+  "description": "A loader for replace string by webpack",
   "keywords": [
     "webpack",
     "loader",
