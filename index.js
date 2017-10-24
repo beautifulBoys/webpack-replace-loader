@@ -6,8 +6,9 @@ var escapeArray = ['/', '[', ']', '-', '.', '(', ')', '$', '^', '*', '+', '?', '
 
 function warning (num) {
   var arr = [
-    '[webpack-replace-loader: warning] The configuration rule of webpack is not allowed! -> https://github.com/beautifulBoys/webpack-replace',
-    '[webpack-replace-loader: warning] The property "search" and "replace" is essential'
+    '[webpack-replace-loader: Error] The configuration rule of webpack is not allowed! -> https://github.com/beautifulBoys/webpack-replace',
+    '[webpack-replace-loader: Error] The property "search" and "replace" is essential',
+    '[webpack-replace-loader: Error] The property "arr" should be an Array.'
   ];
   throw new Error(arr[num]);
 }
@@ -28,12 +29,52 @@ function stringEscape (str) {
 
   return stringArray.join('');
 }
+function replaceFunc (configArray, source) {
+  for (let i = 0; i < configArray.length; i++) {
+    source = source.replace(new RegExp(stringEscape(configArray[i].search), configArray[i].attr), configArray[i].replace);
+  }
+  return source;
+}
 
 module.exports = function (source, map) {
   this.cacheable();
   var options = loaderUtils.getOptions(this);
+  let configArray = [];
+  if (options.hasOwnProperty('arr')) { // arr 存在
+    if (Array.isArray(options.arr)) { // arr 为数组
+      for (let i = 0; i < options.arr.length; i++) {
+        let option = options.arr[i];
+        if (option.hasOwnProperty('search') && option.hasOwnProperty('replace')) {
+          configArray.push({
+            search: option.search,
+            replace: option.replace,
+            attr: option.attr ? option.attr : ''
+          });
+        } else {
+          warning(1);
+        }
+      }
+    } else { // arr 不是数组
+      warning(2);
+    }
 
-  if (!options.arr) {
+  } else { // arr 不存在
+    if (options.hasOwnProperty('search') && options.hasOwnProperty('replace')) { // 对象形式存在
+      configArray.push({
+        search: options.search,
+        replace: options.replace,
+        attr: options.attr ? options.attr : ''
+      });
+    } else { // 对象形式不存在
+      warning(0);
+    }
+  }
+
+  console.log('configArray: ', configArray);
+  source = replaceFunc(configArray, source);
+
+
+/*  if (!options.arr) {
     warning(0);
   } else {
     for (let i = 0; i < options.arr.length; i++) {
@@ -56,7 +97,7 @@ module.exports = function (source, map) {
       }
     }
   }
-
+*/
   this.callback(null, source, map);
   return source;
 };
