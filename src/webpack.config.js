@@ -12,14 +12,14 @@ const config = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader'
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!postcss-loader!less-loader'
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
-        test: /\.(hml)$/,
+        test: /\.(html)$/,
         loader: 'html-loader'
       },
       {
@@ -31,15 +31,6 @@ const config = {
           presets: ['latest']
         }
       },
-      // {
-      //   test: /^(replace\.js|box\.css)$/,
-      //   loader: 'replace-webpack-loader',
-      //   options: {
-      //     arr: [
-      //       {search: '$Title', replace: '社会主义核心价值观', attr: 'g'}
-      //     ]
-      //   }
-      // },
       {
         test: /\.js$/,
         loader: 'webpack-replace-loader',
@@ -49,16 +40,6 @@ const config = {
           attr: 'g'
         }
       },
-
-      // {
-      //   test: /box\.css$/,
-      //   loader: 'replace-webpack-loader',
-      //   options: {
-      //     arr: [
-      //       {search: 'color: green', replace: 'color: red', attr: 'g'}
-      //     ]
-      //   }
-      // },
       {
         test: /\.(png|jpg|svg|gif)$/i,
         loader: 'url-loader',
@@ -69,16 +50,6 @@ const config = {
       }
     ]
   }
-  // plugins: [
-  //   new htmlWebpackPlugin({
-  //     title: 'lixin',
-  //     template: 'index.html',
-  //     minify: {
-  //       removeComments: true,
-  //       collapseWhitespace: true
-  //     }
-  //   })
-  // ]
 };
 
 module.exports = config;

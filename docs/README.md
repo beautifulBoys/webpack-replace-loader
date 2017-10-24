@@ -55,7 +55,7 @@ function showTitle() {
 ```
 In this case, `$Title` is simply to provide a search string anchor, and no practical significance.
 
-## Webpack 的其他配置方法
+## Other configuration methods of Webpack
 
 1. replace the first "BaseUrl" with "https://www.googles.com/api/" in a.js ; "Title" instead of "google open API".
 
