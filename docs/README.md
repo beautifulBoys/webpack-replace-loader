@@ -1,6 +1,8 @@
 # webpack-replace-loader
 > A Webpack loader for replacing strings 。
 
+[中文文档](https://github.com/beautifulBoys/webpack-replace-loader)　　 [English document](https://github.com/beautifulBoys/webpack-replace-loader/tree/master/docs)
+
 ## Examples of use scenarios
 1 . When the webpack project is packaged, it replaces the request URL of the development environment to the URL of the production environment.
 
@@ -156,7 +158,7 @@ replaced：
 </div>
 ```
 
-## 说明
+## Last
 After 1.2 version, all character escape has been included, but not limited to the following circumstances can be replaced.
 ```js
 search: '<a class__';

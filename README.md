@@ -1,6 +1,8 @@
 # webpack-replace-loader
 > 一个 webpack 打包时用来替换字符串的 webpack-loader 。
 
+[中文文档](https://github.com/beautifulBoys/webpack-replace-loader)　　 [English document](https://github.com/beautifulBoys/webpack-replace-loader/tree/master/docs)
+
 ## 使用场景举例
 1 . 在使用 webpack 项目打包的时候，用来将开发环境的请求 URL 替换为 生产环境的 URL 。
 
