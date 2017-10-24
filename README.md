@@ -4,7 +4,7 @@
 ## 使用场景举例
 1 . 在使用 webpack 项目打包的时候，用来将开发环境的请求 URL 替换为 生产环境的 URL 。
 
-2 . 全项目统一查找调整页面配色样式 `color` , 将 `#00ff00` 替换为 `#ff0700` 。
+2 . 项目统一查找调整页面配色样式 `color` , 将 `#00ff00` 替换为 `#ff0700` 。
 
 3 . 大型项目中，依照打包策略在相关文件中写入不同内容。
 
@@ -127,7 +127,7 @@ options: {
 }
 ```
 
- 将 a.hml 文件 的 `div` 标签换位 `span` 标签。将 class `text` 换位 `box` :
+ 将 a.hml 文件 的 `div` 标签换为 `span` 标签。将 class `text` 换为 `box` :
 
 ```html
 <span>$DOM</span>
@@ -136,7 +136,7 @@ options: {
 ```js
 options: {
   arr: [
-    {search: 'span', replace: 'div'},
+    {search: 'span', replace: 'div', attr: 'g'},
     {search: '$DOM', replace: `
       <span class="box">
         <span class="text">社会主义</span>
@@ -154,6 +154,7 @@ options: {
   </span>
 </div>
 ```
+
 ## 说明
 1.2版本后，已做全字符转义，包含但不限于下列情况均可替换。
 ```js

@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
     "babel": "^6.23.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -30,5 +29,7 @@
     "webpack": "^3.4.1",
     "webpack-dev-server": "^1.16.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webpack-replace-loader": "^1.2.5"
+  }
 }
