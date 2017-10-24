@@ -40,8 +40,8 @@ module.exports = function (source, map) {
   this.cacheable();
   var options = loaderUtils.getOptions(this);
   let configArray = [];
-  if (options.hasOwnProperty('arr')) { // arr 存在
-    if (Array.isArray(options.arr)) { // arr 为数组
+  if (options.hasOwnProperty('arr')) {
+    if (Array.isArray(options.arr)) {
       for (let i = 0; i < options.arr.length; i++) {
         let option = options.arr[i];
         if (option.hasOwnProperty('search') && option.hasOwnProperty('replace')) {
@@ -54,50 +54,24 @@ module.exports = function (source, map) {
           warning(1);
         }
       }
-    } else { // arr 不是数组
+    } else {
       warning(2);
     }
 
-  } else { // arr 不存在
+  } else {
     if (options.hasOwnProperty('search') && options.hasOwnProperty('replace')) { // 对象形式存在
       configArray.push({
         search: options.search,
         replace: options.replace,
         attr: options.attr ? options.attr : ''
       });
-    } else { // 对象形式不存在
+    } else {
       warning(0);
     }
   }
 
-  console.log('configArray: ', configArray);
   source = replaceFunc(configArray, source);
 
-
-/*  if (!options.arr) {
-    warning(0);
-  } else {
-    for (let i = 0; i < options.arr.length; i++) {
-      if (!options.arr[i].replace || !options.arr[i].search) {
-        warning(1);
-      } else {
-        let replace = options.arr[i].replace;
-        let search = options.arr[i].search;
-        let attr;
-
-        if (options.arr[i].hasOwnProperty('attr')) {
-          attr = options.arr[i].attr;
-        } else if (options.hasOwnProperty('attr') && !options.arr[i].hasOwnProperty('attr')) {
-          attr = options.attr;
-        } else {
-          attr = '';
-        }
-
-        source = source.replace(new RegExp(stringEscape(search), attr), replace);
-      }
-    }
-  }
-*/
   this.callback(null, source, map);
   return source;
 };
