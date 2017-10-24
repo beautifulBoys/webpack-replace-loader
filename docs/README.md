@@ -28,7 +28,7 @@ module: {
       options: {
         arr: [
           {search: '$BaseUrl', replace: 'https://test.googles.com', attr: 'g'},
-          {search: '$Title', replace: '社会主义核心价值观', attr: 'g'}
+          {search: '$Title', replace: 'The core values of Chinese socialism', attr: 'g'}
         ]
       }
     }
