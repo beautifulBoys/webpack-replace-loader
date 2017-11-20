@@ -24,7 +24,7 @@ module: {
     ...
     {
       test: /test\.js$/,
-      loader: 'replace-webpack-loader',
+      loader: 'webpack-replace-loader',
       options: {
         arr: [
           {search: '$BaseUrl', replace: 'https://test.baiduu.com', attr: 'g'},
@@ -66,7 +66,7 @@ module: {
     ...
     {
       test: /a\.js$/,
-      loader: 'replace-webpack-loader',
+      loader: 'webpack-replace-loader',
       options: {
         arr: [
           {search: 'BaseUrl', replace: 'https://www.baidu.com/api/'},
@@ -76,7 +76,7 @@ module: {
     },
     {
       test: /b\.js$/,
-      loader: 'replace-webpack-loader',
+      loader: 'webpack-replace-loader',
       options: {
         search: 'Location',
         replace: 'https://www.baidu.com/api/',
@@ -95,7 +95,7 @@ module: {
     ...
     {
       test: /(a\.js|b.js|c\.js)$/,
-      loader: 'replace-webpack-loader',
+      loader: 'webpack-replace-loader',
       options: {
         arr: [
           {search: 'BaseUrl', replace: 'https://www.baidu.com/api/'},

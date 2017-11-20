@@ -6,7 +6,7 @@ var escapeArray = ['/', '[', ']', '-', '.', '(', ')', '$', '^', '*', '+', '?', '
 
 function warning (num) {
   var arr = [
-    '[webpack-replace-loader: Error] The configuration rule of webpack is not allowed! -> https://github.com/beautifulBoys/webpack-replace',
+    '[webpack-replace-loader: Error] The configuration rule of webpack is not allowed! -> https://github.com/beautifulBoys/webpack-replace-loader',
     '[webpack-replace-loader: Error] The property "search" and "replace" is essential',
     '[webpack-replace-loader: Error] The property "arr" should be an Array.'
   ];
