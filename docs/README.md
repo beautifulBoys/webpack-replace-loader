@@ -180,3 +180,5 @@ search: '/$/abb^';
 search: '<c><d></>';
 search: '?+^$@><-';
 ```
+
+<img src="https://raw.githubusercontent.com/beautifulBoys/webpack-replace-loader/master/test/test.png">

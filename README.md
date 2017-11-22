@@ -10,6 +10,7 @@
 
 3 . 大型项目中，依照打包策略在相关文件中写入不同内容。
 
+
 ## 安装
 
 将 `webpack-replace-loader` 作为依赖安装到项目:
@@ -179,3 +180,5 @@ search: '/$/abb^';
 search: '<c><d></>';
 search: '?+^$@><-';
 ```
+
+<img src="https://raw.githubusercontent.com/beautifulBoys/webpack-replace-loader/master/test/test.png">
