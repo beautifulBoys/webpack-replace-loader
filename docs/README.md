@@ -163,7 +163,7 @@ Running in the test folder:
  npm install
 ```
 ```shell
- npm run testma
+ npm run test
 ```
 Open with browser: test/dist/index.html.
 

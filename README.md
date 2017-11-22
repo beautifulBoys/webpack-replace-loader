@@ -163,7 +163,7 @@ options: {
  npm install
 ```
 ```shell
- npm run testma
+ npm run test
 ```
 用浏览器打开：test/dist/index.html。
 
