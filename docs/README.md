@@ -157,6 +157,16 @@ replaced：
   </span>
 </div>
 ```
+## 测试
+Running in the test folder:
+```shell
+ npm install
+```
+```shell
+ npm run testma
+```
+Open with browser: test/dist/index.html.
+
 
 ## Last
 After 1.2 version, all character escape has been included, but not limited to the following circumstances can be replaced.

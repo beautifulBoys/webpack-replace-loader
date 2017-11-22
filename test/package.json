@@ -1,11 +1,10 @@
 {
-  "name": "webpack-test",
+  "name": "webpack-replace-loader-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "test",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "webpack --config webpack.config.js",
     "webpack": "webpack --config webpack.config.js"
   },
   "author": "",
@@ -27,9 +26,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^1.16.5"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.16.5",
     "webpack-replace-loader": "^1.2.5"
   }
 }

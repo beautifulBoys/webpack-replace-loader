@@ -157,6 +157,16 @@ options: {
 </div>
 ```
 
+## 测试
+在 test 目录下进行执行：
+```shell
+ npm install
+```
+```shell
+ npm run testma
+```
+用浏览器打开：test/dist/index.html。
+
 ## 说明
 1.2版本后，已做全字符转义，包含但不限于下列情况均可替换。
 ```js
