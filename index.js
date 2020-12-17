@@ -1,4 +1,4 @@
-
+// start code
 var loaderUtils = require('loader-utils');
 
 // Characters needed to escape
