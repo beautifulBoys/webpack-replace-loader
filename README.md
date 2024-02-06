@@ -29,7 +29,7 @@ module: {
       options: {
         arr: [
           {search: '$BaseUrl', replace: 'https://test.baiduu.com', attr: 'g'},
-          {search: '$Title', replace: '社会主义核心价值观', attr: 'g'}
+          {search: '$Title', replace: '百度一下，你就知道', attr: 'g'}
         ]
       }
     }
@@ -49,7 +49,7 @@ module: {
  通过以上 `webpack` 配置打包后生成 test.js ：
 
 ```js
-var title = '社会主义核心价值观';
+var title = '百度一下，你就知道核心价值观';
 function showTitle() {
   document.title = title;
 }
@@ -142,7 +142,7 @@ options: {
     {search: 'span', replace: 'div', attr: 'g'},
     {search: '$DOM', replace: `
       <span class="box">
-        <span class="text">社会主义</span>
+        <span class="text">百度一下，你就知道</span>
       </span>
     `}
   ]
@@ -153,7 +153,7 @@ options: {
 ```html
 <div>
   <span class="box">
-    <span class="text">社会主义</span>
+    <span class="text">百度一下，你就知道</span>
   </span>
 </div>
 ```

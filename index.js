@@ -1,5 +1,4 @@
-// start code
-var loaderUtils = require('loader-utils');
+
 
 // Characters needed to escape
 var escapeArray = ['\'','"', '/', '[', ']', '-', '.', '(', ')', '$', '^', '*', '+', '?', '|', '{', '}'];
@@ -36,9 +35,9 @@ function replaceFunc (configArray, source) {
   return source;
 }
 
-module.exports = function (source, map) {
-  this.cacheable();
-  var options = loaderUtils.getOptions(this);
+
+function loader (content) {
+  const options = this.query;
   let configArray = [];
   if (options.hasOwnProperty('arr')) {
     if (Array.isArray(options.arr)) {
@@ -70,8 +69,9 @@ module.exports = function (source, map) {
     }
   }
 
-  source = replaceFunc(configArray, source);
+  content = replaceFunc(configArray, content);
 
-  this.callback(null, source, map);
-  return source;
-};
+  return content
+}
+
+module.exports = loader

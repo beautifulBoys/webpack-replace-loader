@@ -1,6 +1,6 @@
 {
   "name": "webpack-replace-loader",
-  "version": "1.3.0",
+  "version": "5.0.1",
   "author": "beautifulBoys <1298947916.com>",
   "description": "A loader for replacing strings && 一个 Webpack 打包时用来替换字符串的 Loader ",
   "keywords": [
@@ -11,12 +11,11 @@
     "replace-string"
   ],
   "scripts": {},
-  "main": "index.js",
+  "main": "./index.js",
   "dependencies": {
-    "loader-utils": "^1.1.0"
   },
-  "devDependencies": {
-    "webpack": "1 || 2 || 3"
+  "peerDependencies": {
+    "webpack": "^5.0.0"
   },
   "repository": {
     "type": "git",

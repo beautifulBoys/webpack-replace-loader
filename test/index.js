@@ -12,4 +12,6 @@ function ajax () {
     console.log('?+^$@><-');
     console.log(''#%"-');
 }
-ajax();
+window.onload = function () {
+    ajax();
+}

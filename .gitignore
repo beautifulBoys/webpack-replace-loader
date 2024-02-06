@@ -3,3 +3,6 @@ node_modules/
 dist/
 .idea/
 npm-debug.log
+test/package-lock.json
+package-lock.json
+.history/

@@ -1,29 +1,42 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+
+const webpackReplaceLoader = require('../index')
+
+console.log(webpackReplaceLoader)
+
 const config = {
   entry: {
     index: './index.js'
   },
   output: {
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader'
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
       },
       {
         test: /\.(html)$/,
-        loader: 'html-loader'
+        use: 'html-loader',
       },
       {
         test: /index\.js$/,
+        // loader: 'webpack-replace-loader',
         loader: 'webpack-replace-loader',
         options: {
           arr: [
@@ -66,23 +79,6 @@ const config = {
           ]
         }
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: path.resolve(__dirname, 'src'),
-        exclude: path.resolve(__dirname, 'node_modules'),
-        query: {
-          presets: ['latest']
-        }
-      },
-      {
-        test: /\.(png|jpg|svg|gif)$/i,
-        loader: 'url-loader',
-        query: {
-          limit: 200,
-          name: 'images/[hash:5].[ext]'
-        }
-      }
     ]
   },
   plugins: [
